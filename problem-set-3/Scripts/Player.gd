@@ -1,5 +1,4 @@
 extends Node
-
 '''
 Part 1)
 In player.gd, declare the following variables/constants at the top of the script (outside any function):
@@ -47,6 +46,8 @@ a = a - 3
 a = 5
 a = a + a
 
+
+
 4.2) What is the final value of a in this example?
 var a = 3
 var b = 2
@@ -54,8 +55,27 @@ var c = a + b
 var b = 0
 var a = c - b
 var b = 10
-
 '''
+#Part 4 : 4.1 a=10 and in 4.2 a=5
+var health: int = 100;
+const max_health: int = 100;
+var speed: int = 50;
+var player_name: String = "Chuckles the Clown";
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	print(player_name,	"| HP: ", health, "/", max_health, "| Speed: ", speed);
+	take_damage(15);
+	take_damage(15);
+	heal();
+
+
+func take_damage(amount) -> void:
+	health-=amount
+	print("You took" + str(amount) + "damage. Your remaining health is ", str(health));
+
+func heal() -> void:
+	while health<max_health:
+		health +=7
+		if health>max_health:
+			health=max_health;
+		print("You have been healed! Your current health is: " + str(health));
