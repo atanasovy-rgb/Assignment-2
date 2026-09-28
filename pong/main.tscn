@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b821myv7hqira"]
+
+[ext_resource type="Script" uid="uid://enax4mp7akgn" path="res://paddle.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://c5ktme8hejuti" path="res://ball.gd" id="2_0xm2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wv5dp"]
+size = Vector2(4, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0uva"]
+size = Vector2(1148, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4spbx"]
+size = Vector2(1153, 1.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy3kk"]
+size = Vector2(18, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbgja"]
+size = Vector2(18, 18)
+
+[node name="Main" type="Node2D" unique_id=627937017]
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=255986897]
+
+[node name="right" type="CollisionShape2D" parent="Walls" unique_id=1443740727]
+position = Vector2(1150, 324)
+shape = SubResource("RectangleShape2D_wv5dp")
+
+[node name="top" type="CollisionShape2D" parent="Walls" unique_id=2076017311]
+position = Vector2(574, 0.5)
+shape = SubResource("RectangleShape2D_d0uva")
+
+[node name="bottom" type="CollisionShape2D" parent="Walls" unique_id=463191702]
+position = Vector2(575.5, 647)
+shape = SubResource("RectangleShape2D_4spbx")
+
+[node name="Paddle" type="CharacterBody2D" parent="." unique_id=460462011]
+script = ExtResource("1_ig7tw")
+
+[node name="ColorRect" type="ColorRect" parent="Paddle" unique_id=1713703167]
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 21.0
+offset_bottom = 90.0
+color = Color(0.65884614, 0.08571745, 0.748387, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle" unique_id=805244070]
+position = Vector2(12, 50)
+shape = SubResource("RectangleShape2D_dy3kk")
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=50049667]
+script = ExtResource("2_0xm2m")
+
+[node name="ColorRect" type="ColorRect" parent="Ball" unique_id=967321689]
+offset_left = 884.0
+offset_top = 225.0
+offset_right = 902.0
+offset_bottom = 243.0
+color = Color(9.722412e-06, 0.6328861, 0.8415418, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=929188424]
+position = Vector2(893, 234)
+shape = SubResource("RectangleShape2D_gbgja")

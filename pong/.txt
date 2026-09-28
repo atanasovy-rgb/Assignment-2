@@ -1,0 +1,4 @@
+During the making of the game I had hard time getting the paddle to be restricted by the walls.
+I instead just limited the movement on the y-axes to fix it as I couldn't really figure it out in the way I wanted to at first
+
+I wanted to do my own game idea of tictactoe but I got no where as I didn't feel confident enough and it felt a little too hard and I need to read myself more upon godot before I do a game like tic tac toe as at the moment I feel like I need to do some more research.
